@@ -9,30 +9,33 @@
   </head>
   <body>
     <main id="main-doc">
-      <header>
-        <h1>JS Documentation</h1>
-      </header>
-      <nav id="navbar">
-        <ul>
-          <li><a class="nav-link" href="#intro">Introduction</a></li>
-          <li>
-            <a class="nav-link" href="#what-know"
-              >What you should already know</a
-            >
-          </li>
-          <li><a class="nav-link" href="#js-java">JavaScript and Java</a></li>
-          <li><a class="nav-link" href="#hello">Hello world</a></li>
-          <li><a class="nav-link" href="#vars">Variables</a></li>
-          <li><a class="nav-link" href="#dec-vars">Declaring variables</a></li>
-          <li><a class="nav-link" href="#var-scope">Variable scope</a></li>
-          <li><a class="nav-link" href="#global-vars">Global variables</a></li>
-          <li><a class="nav-link" href="#consts">Constants</a></li>
-          <li><a class="nav-link" href="#dataypes">Data types</a></li>
-          <li><a class="nav-link" href="#if-else">if...else statement</a></li>
-          <li><a class="nav-link" href="#refrence">Reference</a></li>
-        </ul>
-      </nav>
-      <section class="main-section" id="what-know">
+      <div class="menu">
+        <header>
+            <h1>JS Documentation</h1>
+          </header>
+          <nav id="navbar">
+            <ul>
+              <li><a class="nav-link" href="#intro">Introduction</a></li>
+              <li>
+                <a class="nav-link" href="#what-know"
+                  >What you should already know</a
+                >
+              </li>
+              <li><a class="nav-link" href="#js-java">JavaScript and Java</a></li>
+              <li><a class="nav-link" href="#hello">Hello world</a></li>
+              <li><a class="nav-link" href="#vars">Variables</a></li>
+              <li><a class="nav-link" href="#dec-vars">Declaring variables</a></li>
+              <li><a class="nav-link" href="#var-scope">Variable scope</a></li>
+              <li><a class="nav-link" href="#global-vars">Global variables</a></li>
+              <li><a class="nav-link" href="#consts">Constants</a></li>
+              <li><a class="nav-link" href="#dataypes">Data types</a></li>
+              <li><a class="nav-link" href="#if-else">if...else statement</a></li>
+              <li><a class="nav-link" href="#refrence">Reference</a></li>
+            </ul>
+          </nav>
+      </div>
+      <div class="sections">
+        <section class="main-section" id="what-know">
         <h2 class="sec-h">What you should already know</h2>
         <p class="sec-p">
           This guide assumes you have the following basic background:
@@ -57,14 +60,14 @@
           JavaScript and Java are similar in some ways but fundamentally
           different in some others. The JavaScript language resembles Java but
           does not have Java's static typing and strong type checking.
-          JavaScript follows most Java expression syntax, naming conventions and
+          JavaScript follows most Java expssion syntax, naming conventions and
           basic control-flow constructs which was the reason why it was renamed
           from LiveScript to JavaScript.
         </p>
         <p class="sec-p">
           In contrast to Java's compile-time system of classes built by
           declarations, JavaScript supports a runtime system based on a small
-          number of data types representing numeric, Boolean, and string values.
+          number of data types repsenting numeric, Boolean, and string values.
           JavaScript has a prototype-based object model instead of the more
           common class-based object model. The prototype-based model provides
           dynamic inheritance; that is, what is inherited can vary for
@@ -87,10 +90,10 @@
           your first "Hello world" JavaScript code:
         </p>
         <article class="sec-code">
-          <p>
+          <pre>
             function greetMe(yourName) { alert("Hello " + yourName); }
             greetMe("World");
-          </p>
+          </pre>
         </article>
         <p class="sec-p">
           Select the code in the pad and hit Ctrl+R to watch it unfold in your
@@ -122,14 +125,14 @@
         <p class="sec-p">You can declare a variable in three ways:</p>
         <p class="sec-p">With the keyword var. For example,</p>
         <article class="sec-code">
-          <p>var x = 42.</p>
+          <pre>var x = 42.</pre>
         </article>
         <p class="sec-p">
           This syntax can be used to declare both local and global variables.
         </p>
         <p class="sec-p">By simply assigning it a value. For example,</p>
         <article class="sec-code">
-          <p>x = 42.</p>
+          <pre>x = 42.</pre>
         </article>
         <p class="sec-p">
           This always declares a global variable. It generates a strict
@@ -137,7 +140,7 @@
         </p>
         <p class="sec-p">With the keyword let. For example,</p>
         <article class="sec-code">
-          <p>let y = 13.</p>
+          <pre>let y = 13.</pre>
         </article>
         <p class="sec-p">
           This syntax can be used to declare a block scope local variable. See
@@ -162,17 +165,22 @@
           this case is an if statement.
         </p>
         <article class="sec-code">
-          <p>if (true) { var x = 5; } console.log(x); // 5</p>
+          <pre>if (true) {
+             var x = 5; 
+            } 
+            console.log(x); // 5</pre>
         </article>
         <p class="sec-p">
           This behavior changes, when using the let declaration introduced in
           ECMAScript 2015.
         </p>
         <article class="sec-code">
-          <p>
-            if (true) { let y = 5; } console.log(y); // ReferenceError: y is not
+          <pre>
+            if (true) {
+                 let y = 5;
+                 } console.log(y); // ReferenceError: y is not
             defined
-          </p>
+          </pre>
         </article>
       </section>
       <section class="main-section" id="global-vars">
@@ -199,7 +207,7 @@
           can contain alphabetic, numeric, or underscore characters.
         </p>
         <article class="sec-code">
-          <p>const PI = 3.14;</p>
+          <pre>const PI = 3.14;</pre>
         </article>
         <p class="sec-p">
           A constant cannot change value through assignment or be re-declared
@@ -208,27 +216,24 @@
         <p class="sec-p">
           The scope rules for constants are the same as those for let block
           scope variables. If the const keyword is omitted, the identifier is
-          assumed to represent a variable.
+          assumed to repsent a variable.
         </p>
         <p class="sec-p">
           You cannot declare a constant with the same name as a function or
           variable in the same scope. For example:
         </p>
         <article class="sec-code">
-          <p>
-            // THIS WILL CAUSE AN ERROR function f() {}; const f = 5; // THIS
+          <pre> // THIS WILL CAUSE AN ERROR function f() {}; const f = 5; // THIS
             WILL CAUSE AN ERROR ALSO function f() { const g = 5; var g;
-            //statements }
-          </p>
+            //statements }</pre>
         </article>
         <p class="sec-p">
           However, object attributes are not protected, so the following
           statement is executed without problems.
         </p>
         <article class="sec-code">
-          <p>
-            const MY_OBJECT = {"key": "value"}; MY_OBJECT.key = "otherValue";
-          </p>
+          <pre> const MY_OBJECT = {"key": "value"}; MY_OBJECT.key = "otherValue";
+          </pre>
         </article>
       </section>
       <section id="datatypes" class="main-section">
@@ -275,10 +280,13 @@
           condition is false. An if statement looks as follows:
         </p>
         <article class="sec-code">
-          <p>if (condition) { statement_1; } else { statement_2; }</p>
+          <pre>if (condition) { 
+            statement_1; 
+        } 
+        else { statement_2; }</pre>
         </article>
         <p class="sec-p">
-          condition can be any expression that evaluates to true or false. See
+          condition can be any expssion that evaluates to true or false. See
           Boolean for an explanation of what evaluates to true and false. If
           condition evaluates to true, statement_1 is executed; otherwise,
           statement_2 is executed. statement_1 and statement_2 can be any
@@ -289,11 +297,13 @@
           conditions tested in sequence, as follows:
         </p>
         <article class="sec-code">
-          <p>
-            if (condition_1) { statement_1; } else if (condition_2) {
-            statement_2; } else if (condition_n) { statement_n; } else {
-            statement_last; }
-          </p>
+          <pre> if (condition_1) 
+            { statement_1; } 
+            else if (condition_2) {
+            statement_2; } 
+            else if (condition_n) { statement_n; } else {
+            statement_last; }</pre>
+          
         </article>
         <p class="sec-p">
           In the case of multiple conditions only the first logical condition
@@ -303,29 +313,31 @@
           when nesting if statements:
         </p>
         <article class="sec-code">
-          <p>
-            if (condition) { statement_1_runs_if_condition_is_true;
-            statement_2_runs_if_condition_is_true; } else {
-            statement_3_runs_if_condition_is_false;
-            statement_4_runs_if_condition_is_false; }
-          </p>
+          <pre>  if (condition) {
+            statement_1_runs_if_condition_is_true;
+           statement_2_runs_if_condition_is_true; } 
+           else {
+           statement_3_runs_if_condition_is_false;
+           statement_4_runs_if_condition_is_false; }
+         </pre>
         </article>
         <p class="sec-p">
           It is advisable to not use simple assignments in a conditional
-          expression, because the assignment can be confused with equality when
+          expssion, because the assignment can be confused with equality when
           glancing over the code. For example, do not use the following code:
         </p>
         <article class="sec-code">
-          <p>if (x = y) { /* statements here */ }</p>
+          <pre>if (x = y) { /* statements here */ }</pre>
         </article>
         <p class="sec-p">
-          If you need to use an assignment in a conditional expression, a common
+          If you need to use an assignment in a conditional expssion, a common
           practice is to put additional parentheses around the assignment. For
           example:
         </p>
         <article class="sec-code">
-          <p>if ((x = y)) { /* statements here */ }
-        </p>
+          <pre>if ((x = y)) 
+            { /* statements here */ }
+        </pre>
         </article>
       </section>
       <section id="refrence" class="main-section">
@@ -334,6 +346,7 @@
             <li class="sec-item">All the documentation in this page is taken from MDN</li>
         </ul>
       </section>
+      </div>
     </main>
   </body>
 </html>
